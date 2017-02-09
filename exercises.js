@@ -1,24 +1,27 @@
+
 /*
 If statements - Evaluates (or checks) a condition. If the condition is true, any statements in the subsequent code block are executed
 */
+/**
 var today = new Date();
 
 if(today === "Friday"){
   return "Let's Party!";
-};
+};**/
 
 /*
 If/else statements = Evaluates (or checks) a condition. If the condition is true, the first code block is executed. If the condition is false, the second code block is executed instead.
 */
-
+/*
 if(today === "Friday"){
   return "Let's Party!";
 }else{
   return "Get back to coding!";
-};
+};*/
 
 
-/*
+
+/**
  * #1
  * Function - canVote
  * Create a function named `canVote` which will take a parameter: `age`.
@@ -27,8 +30,16 @@ if(today === "Friday"){
  *  @return Datatype: Boolean
  *
  * The function will return true if the number passed into the function is equal to or greater than Hawaii's voting age. Console.log your result.
-*/
+**/
 
+function canVote(age){
+  if (age >= 18) {
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(canVote(19)); 
 
 /*
  * #2
@@ -41,8 +52,14 @@ if(today === "Friday"){
  * The function will return the message: "Login Success!", if the string passed into the function is "test1234"
  * Console.log your result.
 */
-
-
+function login (password){
+  if (password = "test1234") {
+    return "Login Success!";
+  }else{
+    return "Wrong Password";
+  }
+}
+console.log(login("test1234"));
 /*
  * #3
  * Function - isGreaterThan
@@ -56,6 +73,15 @@ if(today === "Friday"){
  * Console.log your result.
 */
 
+function isGreaterThan (first, second){
+  if (first > second) {
+    return true;
+  }else{
+    return false;
+  }
+}
+var firstSecond = isGreaterThan(3,3);
+console.log(firstSecond);
 
 /*
  * #4
@@ -69,6 +95,14 @@ if(today === "Friday"){
  * Console.log your result.
 */
 
+function mustBeTrue (boo){
+  if (boo === true){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(mustBeTrue(false));
 
 /*
  * #5
@@ -82,6 +116,14 @@ if(today === "Friday"){
  * Console.log your result.
 */
 
+function bigBird (word){
+  if (word.length === 3){
+    return "Word to Big Bird!";
+  }else{
+    return "not a three letter word :(";
+  }
+}
+console.log(bigBird("abcd"));
 
 /*
  * #6
@@ -97,6 +139,17 @@ if(today === "Friday"){
 */
 
 
+function isEqual (first, second){
+  if (first == second) {
+    return "You look mahvelous!";
+  }else{
+    return "I don't know who you are anymore.";
+  }
+}
+console.log(isEqual(firstSecond));
+//NOT DONE!!!
+
+
 /*
  * #7
  * Function - notEqual
@@ -110,6 +163,15 @@ if(today === "Friday"){
  * Console.log your result.
 */
 
+function notEqual (first, second) {
+  if (first!= second) {
+    return "Opposites fo attract.";
+  }else{
+    return "Cause it's like you're my mirror.";
+  }
+}
+console.log(notEqual(firstSecond));
+
 
 /*
  * #8
@@ -122,6 +184,15 @@ if(today === "Friday"){
  * The function will return true if the number passed into the function is greater than 100, otherwise it will return false.
  * Console.log your result.
 */ 
+
+function spareChange (money) {
+  if (money > 100){
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(spareChange(101));
 
 
 /*
@@ -151,7 +222,14 @@ if(today === "Friday"){
  * Console.log your result.
 */ 
 
-
+function evenStevens(num) {
+  if (num%2 == 0) {
+    return true;
+  }else{
+    return false;
+  }
+}
+console.log(evenStevens(7));
 /*
  * #11
  * Function - daClub
@@ -165,6 +243,14 @@ if(today === "Friday"){
  * Console.log your result.
 */ 
 
+function daClub(cover, age){
+  if (cover >= 21 && age >= 21){
+    return "Welcome to the Legends Lounge";
+  }else{
+    return "Chuck E Cheese is across the street.";
+  }
+}
+console.log(daClub(18, 48));
 
 /*
  * #12
@@ -179,6 +265,14 @@ if(today === "Friday"){
  * Console.log your result.
 */ 
 
+function graduation (credits, thesis){
+  if (credits >= 120 || thesis >= 120){
+    return "Congratulations on a job well done.";
+  }else{
+    return "See you in summer school.";
+  }
+}
+console.log(graduation(119, 119));
 
 /*
  * #13
@@ -188,11 +282,23 @@ if(today === "Friday"){
  *  @param Datatype: Number `speed`
  *  @return Datatype: String
  *
- * The function will return the message: "You are riding Honolulu's Rail.", if the number value is less than 50, otherwise it will return the message: "You are riding an Amtrak.", if the number value is less than 100, and return the message: "Now you ballin' in the Shinkansen!", if the number value is greater than or equal to 100.
+ * The function will return the message: 
+ "You are riding Honolulu's Rail.", if the number value is less than 50, otherwise it will return the message: 
+ "You are riding an Amtrak.", if the number value is less than 100, and return the message: 
+ "Now you ballin' in the Shinkansen!", if the number value is greater than or equal to 100.
  * Console.log your result.
 */ 
+function moneyTrain(speed){
+  if (speed < 50){
+    return "You are riding Honolulu's Rail.";
+  }else if (speed >100) {
+    return "Now you ballin' in the Shinkansen!";
+  }else {
+    return "You are riding an Amtrak.";
+  }
+}
 
-
+console.log(moneyTrain(101));
 /*
  * #14
  * Function - buyDoughnut
@@ -205,8 +311,28 @@ if(today === "Friday"){
  * Console.log budget and doughnutBought.
  * Invoke your function again.
  * Console.log budget and doughnutBought again.
-*/ 
+*/
 
+
+
+var budget = 25, 
+doughnutPrice = 5, 
+doughnutBought = 0;
+
+function buyDoughnut (){
+  if (budget >= doughnutPrice){
+   doughnutBought++;
+   return (budget = budget - doughnutPrice);
+  }else{
+    return "insufficient funds";
+  }
+}
+buyDoughnut();
+console.log(budget);
+console.log(doughnutBought);
+buyDoughnut();
+console.log(budget);
+console.log(doughnutBought);
 
 /*
 For loops - A for loop checks a condition a specific number of times and allows us to execute a code block and evaluate a condition to determine if our loop should run again.
@@ -236,12 +362,20 @@ for (var i = 0; i<toyotaModels.length; i++){
 */
 
 
+for (var i=1; i<6; i++) {
+  console.log("Player: " + i );
+}
+
 /* 
  * #16
  * Create a for loop that will iterate and console.log each item in the array below:
 */
-  var myFavFoods = ["lemon bar", "carrot cake", "nachos", "bacon cheeseburger", "ramen", "sweet potato fries", "chimichanga"];
 
+var myFavFoods = ["lemon bar", "carrot cake", "nachos", "bacon cheeseburger", "ramen", "sweet potato fries", "chimichanga"];
+
+for (var i=0; i<myFavFoods.length; i++){
+  console.log(myFavFoods[i]);
+}
 
 /*
  * #17
@@ -258,8 +392,23 @@ for (var i = 0; i<toyotaModels.length; i++){
  * Console.log your result.
 */
 
+var numArray = [2, 4, 6, 8, 10];
+var total = 0;
+
+function sumItUp (arr){
+  for (var i=0; i<arr.length; i++){
+    total = total + arr[i];
+  }
+  return total;
+}
+console.log(sumItUp(numArray));
+
+
+
+
 
 /*
+
  * #18
  * Function - allStars
  * Create a function named `allStars` which takes a parameter: `ballers`.
@@ -272,9 +421,36 @@ for (var i = 0; i<toyotaModels.length; i++){
 */ 
 
   var players = ["LeBron", "Linsanity", "Kawhi", "Kobe", "Yao Ming", "Bird", "Jordan"];
-  var east = [];
-  var west = [];
+  var east = []; // even
+  var west = []; // odd
+/*
+function allStars(ballers){
+  for (var i=0; i<ballers.length; i++){
+    if ((i+2)%2==0) {
+      west.push(ballers[i]);
+  }else{
+    east.push(ballers[i]);
+  }
+}
+}
 
+console.log(allStars(east, west));
+*/
+
+function allStars(ballers){
+  for (var i = 0, length = ballers.length; i < length; i++){
+    if (i % 2 === 0) {
+      east.push(ballers[i]);
+    }else{
+      west.push(ballers[i]);
+    }
+  }return{
+    east: east,
+    west: west
+  };
+}
+
+console.log(allStars(players));
 /*
  * #19
  * Function - subways
@@ -289,6 +465,22 @@ for (var i = 0; i<toyotaModels.length; i++){
 
   var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
 
+/*function subways(special){
+  for (var i=0; i<special.length; i++){
+    if(i % 2 !=0, "Classic Tuna");
+  }
+}
+*/
+
+function subways(special){
+  for (var i = 0, length = special.length; i <length; i++){
+    if (i % 2 === 0) {
+        subOftheDay.push(special[i]);
+    }else{
+
+    }
+  }
+}
 
 /*
 Final Boss
