@@ -53,7 +53,7 @@ console.log(canVote(19));
  * Console.log your result.
 */
 function login (password){
-  if (password = "test1234") {
+  if (password === "test1234") {
     return "Login Success!";
   }else{
     return "Wrong Password";
@@ -96,13 +96,13 @@ console.log(firstSecond);
 */
 
 function mustBeTrue (boo){
-  if (boo === true){
+  if (boo = true){
     return true;
   }else{
     return false;
   }
 }
-console.log(mustBeTrue(false));
+console.log(mustBeTrue(true));
 
 /*
  * #5
@@ -140,13 +140,13 @@ console.log(bigBird("abcd"));
 
 
 function isEqual (first, second){
-  if (first == second) {
+  if (first = second) {
     return "You look mahvelous!";
   }else{
     return "I don't know who you are anymore.";
   }
 }
-console.log(isEqual(firstSecond));
+console.log(isEqual(4,4));
 //NOT DONE!!!
 
 
@@ -165,12 +165,12 @@ console.log(isEqual(firstSecond));
 
 function notEqual (first, second) {
   if (first!= second) {
-    return "Opposites fo attract.";
+    return "Opposites do attract.";
   }else{
     return "Cause it's like you're my mirror.";
   }
 }
-console.log(notEqual(firstSecond));
+console.log(notEqual(5,6));
 
 
 /*
@@ -223,7 +223,7 @@ console.log(spareChange(101));
 */ 
 
 function evenStevens(num) {
-  if (num%2 == 0) {
+  if (num%2 === 0) {
     return true;
   }else{
     return false;
@@ -266,13 +266,13 @@ console.log(daClub(18, 48));
 */ 
 
 function graduation (credits, thesis){
-  if (credits >= 120 || thesis >= 120){
+  if (credits >= 120 || thesis === true){ // LOGICAL OR sign
     return "Congratulations on a job well done.";
   }else{
     return "See you in summer school.";
   }
 }
-console.log(graduation(119, 119));
+console.log(graduation(119, false));
 
 /*
  * #13
@@ -315,17 +315,18 @@ console.log(moneyTrain(101));
 
 
 
-var budget = 25, 
+var budget = 100, 
 doughnutPrice = 5, 
 doughnutBought = 0;
 
 function buyDoughnut (){
   if (budget >= doughnutPrice){
    doughnutBought++;
-   return (budget = budget - doughnutPrice);
-  }else{
-    return "insufficient funds";
-  }
+   (budget = budget - doughnutPrice);
+   //or for shortcut    budget -= doughnutPrice
+  }//else{
+   // return "insufficient funds";
+  //}
 }
 buyDoughnut();
 console.log(budget);
@@ -333,6 +334,9 @@ console.log(doughnutBought);
 buyDoughnut();
 console.log(budget);
 console.log(doughnutBought);
+
+
+
 
 /*
 For loops - A for loop checks a condition a specific number of times and allows us to execute a code block and evaluate a condition to determine if our loop should run again.
@@ -346,7 +350,7 @@ The for loop is made up for 3 parts:
 
 var toyotaModels = ["Corolla", "Prius", "4 Runner", "Camry", "Land Cruiser"];
 
-for (var i = 0; i<toyotaModels.length; i++){
+for (var i = 0; i<toyotaModels.length; i++){ 
    console.log("Toyota " + toyotaModels[i]);
 }
 
@@ -398,6 +402,7 @@ var total = 0;
 function sumItUp (arr){
   for (var i=0; i<arr.length; i++){
     total = total + arr[i];
+    //total += arr[i];
   }
   return total;
 }
@@ -423,22 +428,10 @@ console.log(sumItUp(numArray));
   var players = ["LeBron", "Linsanity", "Kawhi", "Kobe", "Yao Ming", "Bird", "Jordan"];
   var east = []; // even
   var west = []; // odd
-/*
-function allStars(ballers){
-  for (var i=0; i<ballers.length; i++){
-    if ((i+2)%2==0) {
-      west.push(ballers[i]);
-  }else{
-    east.push(ballers[i]);
-  }
-}
-}
 
-console.log(allStars(east, west));
-*/
 
 function allStars(ballers){
-  for (var i = 0, length = ballers.length; i < length; i++){
+  for (var i = 0; i <ballers.length; i++){// variable equal index 0, where i is less than the length of var, and increment 
     if (i % 2 === 0) {
       east.push(ballers[i]);
     }else{
@@ -467,20 +460,22 @@ console.log(allStars(players));
 
 /*function subways(special){
   for (var i=0; i<special.length; i++){
-    if(i % 2 !=0, "Classic Tuna");
+    if(i % 2 !=1, "Classic Tuna");
   }
 }
 */
 
-function subways(special){
-  for (var i = 0, length = special.length; i <length; i++){
-    if (i % 2 === 0) {
-        subOftheDay.push(special[i]);
-    }else{
 
+function subways(special){
+  for (var i = 0; i<special.length; i++){
+    if (i % 2 === 1) { 
+      //special[i] =  "Classic Tuna";
+      special.splice(i, 1, "Classic Tuna");
     }
   }
+    return special;
 }
+console.log(subways(subOftheDay));
 
 /*
 Final Boss
@@ -499,6 +494,19 @@ Final Boss
 
 
 
+
+function removeLetter (str){
+  var newArr = [];
+  for (var i = 0; i<str.length; i++){
+   // console.log(str[i]);
+    if(str[i] != 'a' && str[i] !== "A"){
+      newArr.push(str[i]);
+    }
+  }
+console.log(newArr);
+return newArr;
+}
+removeLetter(phrase);
 
 
 
