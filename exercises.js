@@ -31,15 +31,15 @@ if(today === "Friday"){
  *
  * The function will return true if the number passed into the function is equal to or greater than Hawaii's voting age. Console.log your result.
 **/
-
 function canVote(age){
   if (age >= 18) {
     return true;
   }else{
     return false;
   }
-}
-console.log(canVote(19)); 
+} 
+
+console.log (canVote(21));
 
 /*
  * #2
@@ -52,14 +52,17 @@ console.log(canVote(19));
  * The function will return the message: "Login Success!", if the string passed into the function is "test1234"
  * Console.log your result.
 */
-function login (password){
-  if (password === "test1234") {
+
+function login(password){
+  if (password === "test1234"){
     return "Login Success!";
   }else{
-    return "Wrong Password";
+    return "Incorrect";
   }
 }
+
 console.log(login("test1234"));
+
 /*
  * #3
  * Function - isGreaterThan
@@ -73,15 +76,16 @@ console.log(login("test1234"));
  * Console.log your result.
 */
 
-function isGreaterThan (first, second){
-  if (first > second) {
+function isGreaterThan(first, second){
+  if (first > second){
     return true;
   }else{
     return false;
   }
 }
-var firstSecond = isGreaterThan(3,3);
-console.log(firstSecond);
+
+console.log(isGreaterThan(1,2));
+
 
 /*
  * #4
@@ -95,14 +99,16 @@ console.log(firstSecond);
  * Console.log your result.
 */
 
-function mustBeTrue (boo){
-  if (boo = true){
+
+function mustBeTrue(boo){
+  if (boo === true){
     return true;
   }else{
     return false;
   }
 }
-console.log(mustBeTrue(true));
+console.log(mustBeTrue(false));
+
 
 /*
  * #5
@@ -116,14 +122,24 @@ console.log(mustBeTrue(true));
  * Console.log your result.
 */
 
-function bigBird (word){
+function bigBird(word){
+  if (word.length >= 3){
+    return "Word to Big Bird!";
+  }else{
+    return "must be 3 letter BIRD";
+  }
+}
+
+console.log(bigBird("letter"));
+
+/*function bigBird (word){
   if (word.length === 3){
     return "Word to Big Bird!";
   }else{
     return "not a three letter word :(";
   }
 }
-console.log(bigBird("abcd"));
+console.log(bigBird("abcd"));*/
 
 /*
  * #6
@@ -138,16 +154,15 @@ console.log(bigBird("abcd"));
  * Console.log your result.
 */
 
-
-function isEqual (first, second){
-  if (first = second) {
+function isEqual(first, second){
+  if (first === second){
     return "You look mahvelous!";
   }else{
     return "I don't know who you are anymore.";
   }
 }
-console.log(isEqual(4,4));
-//NOT DONE!!!
+
+console.log(isEqual("me", "me"));
 
 
 /*
@@ -209,6 +224,15 @@ console.log(spareChange(101));
  * Console.log your result.
 */ 
 
+function dirty30(one, two, three){
+  if (one + two + three > 30){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+console.log(dirty30(15,14,2));
 
 /*
  * #10
@@ -365,9 +389,8 @@ for (var i = 0; i<toyotaModels.length; i++){
  * "Player: 5"
 */
 
-
-for (var i=1; i<6; i++) {
-  console.log("Player: " + i );
+for (var i=1; i<6; i++){
+  console.log("Player" + i);
 }
 
 /* 
@@ -395,14 +418,24 @@ for (var i=0; i<myFavFoods.length; i++){
  * The function will loop through and add up all the values in the array that is passed into the function and return the total.
  * Console.log your result.
 */
-
-var numArray = [2, 4, 6, 8, 10];
+/*var numArray = [1,2,3,4,5];
 var total = 0;
 
 function sumItUp (arr){
   for (var i=0; i<arr.length; i++){
-    total = total + arr[i];
-    //total += arr[i];
+    total += arr[i];
+  }
+}
+sumItUp(numArray);
+console.log(total);
+*/
+
+var numArray = [1,2,3,4,5];
+var total = 0;
+
+function sumItUp (arr){
+  for (var i=0; i<arr.length; i++){
+    total += arr[i];
   }
   return total;
 }
@@ -444,6 +477,21 @@ function allStars(ballers){
 }
 
 console.log(allStars(players));
+
+/*  function allStars(ballers){
+    for (var a = 0; a < ballers.length; a++){
+      if (a % 2 === 0){
+        east.push(ballers[a]);
+      } else {
+        west.push(ballers[a]);
+      }
+    }
+  }
+allStars(players);
+console.log(east);
+console.log(west);*/
+
+
 /*
  * #19
  * Function - subways
@@ -458,14 +506,18 @@ console.log(allStars(players));
 
   var subOftheDay = ["Teriyaki Chicken", "Spicy Italian", "Turkey", "BMT", "Black Forest Ham", "Meatball Marinara", "Veggie"];
 
-/*function subways(special){
+
+function subways(special){
   for (var i=0; i<special.length; i++){
-    if(i % 2 !=1, "Classic Tuna");
+    if (i%2 === 1){
+      special[i]="Classic Tuna";
+    }
   }
+  return special;
 }
-*/
+console.log(subways(subOftheDay));
 
-
+/*
 function subways(special){
   for (var i = 0; i<special.length; i++){
     if (i % 2 === 1) { 
@@ -476,7 +528,7 @@ function subways(special){
     return special;
 }
 console.log(subways(subOftheDay));
-
+*/
 /*
 Final Boss
  * #20
@@ -489,13 +541,23 @@ Final Boss
  *  The function will loop through the string value and put all the letters into an array, except for the letter "A" and "a". We don't want no stinking "A" or "a" in our array. Test your function with the `phrase` below!
 */
 
-  var phrase = "An apple a day keeps Alice feeling awesome!"
+  var phrase = "An apple a day keeps Alice feeling awesome!";
   
 
+var strArray = [];
 
+function removeLetter(str){
+  for (var i=0; i<str.length; i++){
+    if (str[i] != "A" && str[i] != "a"){
+      strArray.push(str[i]);
+    }
+  }
+  return strArray;
+}
 
+console.log(removeLetter(phrase));
 
-function removeLetter (str){
+/*function removeLetter (str){
   var newArr = [];
   for (var i = 0; i<str.length; i++){
    // console.log(str[i]);
@@ -506,7 +568,7 @@ function removeLetter (str){
 console.log(newArr);
 return newArr;
 }
-removeLetter(phrase);
+removeLetter(phrase);*/
 
 
 
